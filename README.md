@@ -18,8 +18,8 @@ A custom TCP port scanning tool built in Python, designed for fast, multithreade
 
 1. **Clone the repository**:
    ```bash
-   git clone https://github.com/_____________/port-scanner.git
-   cd port-scanner
+   git clone https://github.com/GLPtrs/pyportscanner
+   cd pyportscanner
 ````
 
 2. **Create a virtual environment (optional but recommended)**:
