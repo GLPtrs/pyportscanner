@@ -1,11 +1,11 @@
 **README.md**
 
 ````markdown
-# Lightweight Python Port Scanner
+## Lightweight Python Port Scanner
 
 A custom TCP port scanning tool built in Python, designed for fast, multithreaded reconnaissance. Features banner grabbing, HTTP header probing on common web ports, graceful interruption handling, and colored terminal output for better readability.
 
-## Features
+### Features
 
 - **Multithreaded Scanning**: Uses `ThreadPoolExecutor` for concurrent TCP connect scans.
 - **Banner Grabbing**: Retrieves service banners (SSH, FTP, SMTP, etc.) to help identify software versions.
@@ -14,7 +14,7 @@ A custom TCP port scanning tool built in Python, designed for fast, multithreade
 - **Colored Output**: Employs Colorama to distinguish open ports, banners, and HTTP info in the console.
 - **Flexible Configuration**: Customizable port ranges, timeout, thread count, and verbose logging.
 
-## Installation
+### Installation
 
 1. **Clone the repository**:
    ```bash
