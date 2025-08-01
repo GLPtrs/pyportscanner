@@ -1,26 +1,35 @@
-**README.md**
+## ⚡ Lightweight Python Port Scanner
 
-````markdown
-## Lightweight Python Port Scanner
+A fast and flexible TCP port scanner written in Python. Designed for quick reconnaissance, it supports multithreaded scanning, service banner detection, and lightweight HTTP probing. Ideal for security testing and network diagnostics.
 
-A custom TCP port scanning tool built in Python, designed for fast, multithreaded reconnaissance. Features banner grabbing, HTTP header probing on common web ports, graceful interruption handling, and colored terminal output for better readability.
+### 🔍 Key Features
 
-### Features
+- **Concurrent Scanning**  
+  Leverages Python's `ThreadPoolExecutor` to scan multiple ports in parallel for high performance.
 
-- **Multithreaded Scanning**: Uses `ThreadPoolExecutor` for concurrent TCP connect scans.
-- **Banner Grabbing**: Retrieves service banners (SSH, FTP, SMTP, etc.) to help identify software versions.
-- **HTTP Probing**: Sends `HEAD` requests on ports 80, 443, 8000, 8080, 8443 to capture HTTP status lines and server headers.
-- **Graceful Shutdown**: Handles `KeyboardInterrupt` (Ctrl+C) to terminate scans cleanly.
-- **Colored Output**: Employs Colorama to distinguish open ports, banners, and HTTP info in the console.
-- **Flexible Configuration**: Customizable port ranges, timeout, thread count, and verbose logging.
+- **Service Banner Grabbing**  
+  Attempts to extract banners from open ports (e.g., SSH, FTP, SMTP) to help identify running services.
 
-### Installation
+- **HTTP Header Analysis**  
+  Automatically sends `HEAD` requests to common web ports (80, 443, 8000, 8080, 8443) to retrieve server info and status codes.
 
-1. **Clone the repository**:
+- **Interrupt Handling**  
+  Gracefully stops on `Ctrl+C`, ensuring clean termination and user feedback.
+
+- **Colorized Terminal Output**  
+  Uses `Colorama` to highlight open ports, service banners, and HTTP headers for better readability.
+
+- **Custom Configuration**  
+  Easily adjust port ranges, timeouts, thread count, and verbosity through command-line arguments.
+
+### ⚙️ Installation
+
+1. Clone the repository:
    ```bash
    git clone https://github.com/GLPtrs/pyportscanner
    cd pyportscanner
-````
+
+
 
 2. **Create a virtual environment (optional but recommended)**:
 
@@ -33,12 +42,14 @@ A custom TCP port scanning tool built in Python, designed for fast, multithreade
    ```bash
    pip install -r requirements.txt
    ```
-
-## Usage
-
-```bash
-python3 port_scanner.py <target> [options]
-```
+4. **Make the script executable (or use /usr/bin/env python3 pyportscanner.py)**:
+   ```bash
+   chmod +x pyportscanner.py
+   ```
+**Usage**:
+   ```bash
+   ./pyportscanner.py <target> [options]
+   ```
 
 **Options:**
 
@@ -57,17 +68,17 @@ python3 port_scanner.py <target> [options]
 * **Basic scan, default ports**:
 
   ```bash
-  python3 port_scanner.py example.com
+  ./pyportscanner.py <IP>
   ```
 
 * **Scan ports 1–500 with banner grabbing**:
 
   ```bash
-  python3 port_scanner.py example.com -p 1-500 -b
+  ./pyportscanner.py <IP> -p 1-500 -b
   ```
 
 * **Full scan, HTTP probe, verbose output**:
 
   ```bash
-  python3 port_scanner.py example.com -p 1-1024 -b -s -v
+  ./pyportscanner.py <IP> -p 1-1024 -b -s -v
   ```
