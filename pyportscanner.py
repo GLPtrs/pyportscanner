@@ -88,7 +88,7 @@ class PortScanner:
         
     def run(self):
         logging.info(
-            f"Starting scan on {self.target} ({self.ip}, ports: {self.ip})"
+            f"Starting scan on {self.target} ({self.ip}, ports: {self.ports})"
         )
         start = datetime.now()
         try:
